@@ -104,19 +104,6 @@ def get_reviews(business_id, api_key=API_KEY):
     return request(API_HOST, review_path, api_key)
 
 
-def get_review(business_id, api_key=API_KEY):
-    """Query the Business API by a business ID.
-
-    Args:
-        business_id (str): The ID of the business to query.
-
-    Returns:
-        dict: The JSON response from the request.
-    """
-    review_path = f"{BUSINESS_PATH}{business_id}/reviews"
-    return request(API_HOST, review_path, api_key)
-
-
 def query_api(term, location):
     """Queries the API by the input values from the user.
 
@@ -143,6 +130,7 @@ def query_api(term, location):
     pprint.pprint(response, indent=2)
 
 
+# Entry point
 def main():
     parser = argparse.ArgumentParser()
 
